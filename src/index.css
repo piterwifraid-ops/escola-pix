@@ -1,51 +1,48 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
+/* ── Design System — Panini Brasil Clone ─────────────────────────────────── */
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --foreground: 220 25% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 220 25% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 220 25% 12%;
 
-    --primary: 26 95% 55%;
+    /* Drogasil Red */
+    --primary: 350 100% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 95%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 25% 12%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 52%;
 
-    --accent: 26 95% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 25% 12%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 88%;
-    --input: 0 0% 88%;
-    --ring: 26 95% 55%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 350 100% 45%;
 
     --radius: 0.75rem;
 
-    /* Quiz specific */
-    --quiz-orange: 26 95% 55%;
-    --quiz-orange-hover: 22 95% 48%;
-    --quiz-dark: 0 0% 10%;
-    --quiz-gray: 0 0% 55%;
-    --quiz-light-bg: 0 0% 98%;
-    --quiz-progress-bg: 0 0% 88%;
-    --quiz-success: 142 71% 45%;
-    --quiz-option-border: 214 31% 88%;
-    --quiz-option-selected: 26 95% 55%;
+    /* Brand colors — Drogasil */
+    --brand-red: 350 100% 45%;
+    --brand-dark: 220 45% 21%;
+    --brand-green: 142 65% 36%;
+    --brand-green-light: 142 65% 95%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -56,83 +53,28 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
-  .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 26 95% 55%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 26 95% 55%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 26 95% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
+  * { @apply border-border; }
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
-@layer components {
-  .quiz-container {
-    @apply max-w-md mx-auto min-h-screen bg-background;
-  }
+@layer utilities {
+  .text-brand-red   { color: hsl(var(--brand-red)); }
+  .text-brand-dark  { color: hsl(var(--brand-dark)); }
+  .text-brand-green { color: hsl(var(--brand-green)); }
 
-  .quiz-progress-bar {
-    @apply h-1.5 bg-[hsl(var(--quiz-progress-bg))] w-full;
-  }
+  .bg-brand-red    { background-color: hsl(var(--brand-red)); }
+  .bg-brand-dark   { background-color: hsl(var(--brand-dark)); }
+  .bg-brand-green  { background-color: hsl(var(--brand-green)); }
+  .bg-brand-green-light { background-color: hsl(var(--brand-green-light)); }
 
-  .quiz-progress-fill {
-    @apply h-full bg-[hsl(var(--quiz-orange))] transition-all duration-500 ease-out;
-  }
-
-  .quiz-option {
-    @apply w-full border-2 border-[hsl(var(--quiz-option-border))] rounded-xl p-4 text-left cursor-pointer transition-all duration-200 hover:border-[hsl(var(--quiz-orange))] hover:bg-orange-50 font-medium text-[hsl(var(--quiz-dark))];
-  }
-
-  .quiz-option.selected {
-    @apply border-[hsl(var(--quiz-orange))] bg-orange-50;
-  }
-
-  .quiz-btn-primary {
-    @apply w-full bg-[hsl(var(--quiz-orange))] hover:bg-[hsl(var(--quiz-orange-hover))] text-white font-bold py-4 px-6 rounded-full text-base uppercase tracking-wider transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.99];
-  }
-
-  .quiz-btn-primary:disabled {
-    @apply opacity-50 cursor-not-allowed hover:scale-100;
-  }
-
-  .quiz-checkmark {
-    @apply text-[hsl(var(--quiz-success))] font-bold;
-  }
-
-  .quiz-input {
-    @apply w-full border-2 border-[hsl(var(--quiz-option-border))] rounded-xl p-4 text-base focus:outline-none focus:border-[hsl(var(--quiz-orange))] transition-colors duration-200;
-  }
+  .border-brand-red   { border-color: hsl(var(--brand-red)); }
+  .border-brand-dark  { border-color: hsl(var(--brand-dark)); }
+  .border-brand-green { border-color: hsl(var(--brand-green)); }
 }
