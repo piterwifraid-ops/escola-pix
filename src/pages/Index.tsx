@@ -70,9 +70,9 @@ export default function Index() {
     {
       id: 1,
       label: "Tratamento 01 Mês",
-      desc: "Dose de adaptação (4 canetas)",
+      desc: "Dose de adaptação (1 canetas)",
       original: "R$ 1.100",
-      price: "R$ 297,00",
+      price: "R$ 97,00",
       icon: <img src="https://product-data.raiadrogasil.io/images/16451727.webp" alt="Kit 1 mês" className="h-12 w-12 rounded object-cover" />,
       badge: null,
       highlight: false,
@@ -81,9 +81,9 @@ export default function Index() {
     {
       id: 2,
       label: "Tratamento 03 Meses",
-      desc: "Ciclo de Redução Padrão (12 canetas)",
+      desc: "Ciclo de Redução Padrão (3 canetas)",
       original: "R$ 3.300",
-      price: "R$ 697,00",
+      price: "R$ 169,00",
       icon: <img src="https://product-data.raiadrogasil.io/images/16451727.webp" alt="Kit 3 meses" className="h-12 w-12 rounded object-cover" />,
       badge: "RECOMENDADO PELO MINISTÉRIO",
       highlight: true,
@@ -92,9 +92,9 @@ export default function Index() {
     {
       id: 3,
       label: "Tratamento 06 Meses",
-      desc: "Ciclo Completo de Emagrecimento (24 canetas)",
+      desc: "Ciclo Completo de Emagrecimento (6 canetas)",
       original: "R$ 6.600",
-      price: "R$ 1.197,00",
+      price: "R$ 227,00",
       icon: <img src="https://product-data.raiadrogasil.io/images/16451727.webp" alt="Kit 6 meses" className="h-12 w-12 rounded object-cover" />,
       badge: "MELHOR CUSTO-BENEFÍCIO",
       highlight: false,
@@ -137,11 +137,7 @@ export default function Index() {
               className="mx-auto h-[73px] w-auto object-contain sm:h-[83px]" 
               style={{ maxWidth: '286px', width: '80vw' }}
             />
-            <img 
-              src={govLogo} 
-              alt="Governo Federal" 
-              className="h-8 object-contain sm:h-10 absolute right-0 top-1/2 -translate-y-1/2" 
-            />
+           
           </div>
 
           <div className="flex gap-2 w-full">
